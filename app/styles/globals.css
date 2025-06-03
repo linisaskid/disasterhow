@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 tracking-wide text-lg;
+    font-family: 'FH Oscar Pro', sans-serif;
+  }
+}
+
+/* Font definitions */
+@font-face {
+  font-family: 'FH Anorma Test';
+  src: url('/fh-anorma/FHAnormaTest-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Anorma Test';
+  src: url('/fh-anorma/FHAnormaTest-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Anorma Test';
+  src: url('/fh-anorma/FHAnormaTest-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Anorma Test';
+  src: url('/fh-anorma/FHAnormaTest-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-Light-BF65139d0c931d7.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-LightItalic-BF65139d0ca8898.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-Regular-BF65139d0c80487.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-RegularItalic-BF65139d0c8de00.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-Medium-BF65139d0c6d7d6.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-MediumItalic-BF65139d0c5e719.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-SemiBold-BF65139d0c86085.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-SemiBoldItalic-BF65139d0c7eaf5.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-Bold-BF65139d0b78b5c.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-BoldItalic-BF65139d0c8499b.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-Black-BF65139d0cad01a.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FH Oscar Pro';
+  src: url('/fh-oscar-pro/FHOscarTest-BlackItalic-BF65139d0c76102.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Modern styles */
+.glass {
+  @apply bg-black/90 backdrop-blur-lg border border-gray-800;
+}
+
+.glass-card {
+  @apply bg-gray-900/80 backdrop-blur-md border border-gray-800 shadow-xl;
+}
+
+.nav-link {
+  @apply relative font-medium px-4 py-2 rounded-lg transition-all duration-300;
+}
+
+.nav-link:hover {
+  @apply bg-gray-500/20 dark:bg-white/10 backdrop-blur-md;
+}
+
+.hero-section {
+  @apply relative overflow-hidden bg-white dark:bg-gray-900;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -150%; /* Start even higher above */
+  left: 0;
+  width: 100%;
+  height: 300%; /* Make it taller to ensure full coverage */
+  background: radial-gradient(
+    circle at top center,
+    rgba(139, 92, 246, 0.7) 0%,
+    rgba(139, 92, 246, 0.4) 30%,
+    rgba(139, 92, 246, 0) 70%
+  );
+  filter: blur(40px); /* Add blur effect */
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 8s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { 
+    transform: scale(1) translateY(0); 
+    opacity: 0.5;
+    filter: blur(40px);
+  }
+  50% { 
+    transform: scale(1.1) translateY(-20px); 
+    opacity: 0.8;
+    filter: blur(60px);
+  }
+  100% { 
+    transform: scale(1) translateY(0); 
+    opacity: 0.5;
+    filter: blur(40px);
+  }
+}
+
+/* Dark mode grid pattern - optional, requires additional element */
+/* You would need to add another element or pseudo-element for the grid */
+
+.feature-card {
+  @apply bg-white p-8 rounded-lg shadow-md transition-all duration-300;
+}
+
+.course-card {
+  @apply bg-white p-8 rounded-lg shadow-md transition-all duration-300 flex flex-col;
+}
+
+.course-card:hover .course-link {
+  /* Removed hover effect */
+}
+
+.course-link {
+  @apply bg-blue-600/80 backdrop-blur-md text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center whitespace-nowrap mt-auto self-start hover:bg-blue-600/90;
+}
+
+.footer-link {
+  @apply transition-all duration-300 hover:text-gray-200;
+}
+
+/* Modern button styles */
+.modern-button {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 
+         bg-blue-600/80 backdrop-blur-md text-white
+         hover:bg-blue-600/90
+         active:translate-y-0;
+}
+
+.modern-button-outline {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 
+         bg-blue-600/80 backdrop-blur-md text-white
+         hover:bg-blue-600/90
+         active:translate-y-0;
+}
+
+/* Modern section styles */
+.modern-section {
+  @apply relative overflow-hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+  
+  .feature-card, .course-card {
+    margin-bottom: 1rem;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.font-anorma {
+  font-family: 'FH Anorma Test', sans-serif;
+} 
